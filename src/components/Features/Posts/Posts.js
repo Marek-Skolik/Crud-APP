@@ -11,7 +11,7 @@ const Posts = () => {
     <Row xs={1} md={2} lg={3}>
       {posts.map(post => (
         <Col key={post.id}>
-          <Card>
+          <Card className="mb-2">
             <Card.Body>
               <Card.Title>{post.title}</Card.Title>
               <Card.Text className="my-0"><strong>Author: </strong>{post.author}</Card.Text>
