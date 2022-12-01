@@ -1,7 +1,7 @@
 import { getPostById, removePost } from '../../../redux/postRedux';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import {Button, Row, Col, Card, Modal } from "react-bootstrap";
+import { Button, Row, Col, Card, Modal } from "react-bootstrap";
 import { useState } from "react";
 
 

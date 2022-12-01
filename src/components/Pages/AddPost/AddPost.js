@@ -1,10 +1,8 @@
+import AddPostForm from '../../Features/AddPostForm/AddPostForm';
 
-
-const AddPost = props => {
+const AddPost = () => {
     return (
-        <div>
-            <h1>AddPost</h1>
-        </div>
+        <AddPostForm />
     )
 }
 
