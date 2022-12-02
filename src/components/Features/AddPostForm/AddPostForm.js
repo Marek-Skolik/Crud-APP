@@ -1,8 +1,7 @@
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { ADD_POST } from '../../../redux/postRedux';
-import { Link } from "react-router-dom";
+import { addPost } from '../../../redux/postRedux';
 
 
 const AddPostForm = () => {
@@ -17,7 +16,7 @@ const AddPostForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(ADD_POST({title, author, published, shortDescription, content }));
+        dispatch(addPost({title, author, published, shortDescription, content }));
         setTitle("");
         setAuthor("");
         setPublished("");
@@ -56,7 +55,7 @@ const AddPostForm = () => {
                         <Form.Control value={content} onChange={e => setContent(e.target.value)} type="text" as="textarea" style={{ height: '200px' }} placeholder="Leave a comment here" />
                     </Form.Group>
 
-                    <Link to="/"><Button onClick={handleSubmit} className="my-3">Add post</Button></Link>  
+                    <Button onClick={handleSubmit} className="my-3">Add post</Button>
                 </Form>
             </Col>
         </Row>
