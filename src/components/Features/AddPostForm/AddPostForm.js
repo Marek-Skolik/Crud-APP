@@ -2,11 +2,13 @@ import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addPost } from '../../../redux/postRedux';
+import { useNavigate } from "react-router-dom";
 
 
 const AddPostForm = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [ title, setTitle ] = useState("");
     const [ author, setAuthor ] = useState("");
@@ -17,6 +19,7 @@ const AddPostForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         dispatch(addPost({title, author, published, shortDescription, content }));
+        navigate("/");
         setTitle("");
         setAuthor("");
         setPublished("");
