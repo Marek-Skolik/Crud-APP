@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { editPost, getPostById } from "../../../redux/postsRedux";
+import { editPost, getPostById } from "../../../redux/postRedux";
 import PostForm from "../PostForm/PostForm";
 
 const EditPostForm = () => {
