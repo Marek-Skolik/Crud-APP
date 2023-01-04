@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { Button, Row, Col, Card, Modal } from "react-bootstrap";
 import { useState } from "react";
-
-
+import DateToStr from '../../../utils/DateToStr';
 
 const Post = () => {
 
@@ -31,8 +30,8 @@ const Post = () => {
                         <Card.Body>
                             <Card.Title><h1>{postData.title}</h1></Card.Title>
                             <Card.Text className="my-0"><strong>Author: </strong>{postData.author}</Card.Text>
-                            <Card.Text className="my-0"><strong>Published: </strong>{postData.publishedDate}</Card.Text>
-                            <Card.Text><strong>Content: </strong>{postData.content}</Card.Text>
+                            <Card.Text className="my-0"><strong>Published: </strong><DateToStr date={postData.publishedDate}/></Card.Text>
+                            <Card.Text><strong>Content: </strong><p dangerouslySetInnerHTML={{ __html: postData.content }} /></Card.Text>
                             <Card.Text>{postData.shortDescription}</Card.Text>
                         </Card.Body>
                     </Card>
