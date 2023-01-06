@@ -4,6 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useForm } from "react-hook-form";
 
 const PostForm = ({ action, actionText, ...props }) => {
     const [title, setTitle] = useState(props.title || '');
@@ -11,7 +12,8 @@ const PostForm = ({ action, actionText, ...props }) => {
     const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
     const [shortDescription, setShortDescription] = useState(props.shortDescription || '');
     const [content, setContent] = useState(props.content || '');
-    const [value, setValue] = useState('');
+
+    const { register, handleSubmit: validate, formState: { errors } } = useForm();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,15 +23,19 @@ const PostForm = ({ action, actionText, ...props }) => {
     return (
         <Row className="justify-content-center">
             <Col className="col-7">
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={validate(handleSubmit)}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Title</Form.Label>
-                        <Form.Control value={title} onChange={e => setTitle(e.target.value)} type="text" placeholder="Enter title" />
+                        <Form.Control
+                            {...register("title", { required: true})}
+                            value={title} onChange={e => setTitle(e.target.value)} type="text" placeholder="Enter title" />
+                            {errors.title && <span>This field is required</span>}
                     </Form.Group>
 
                     <Form.Group className="mb-3">
                         <Form.Label>Author</Form.Label>
-                        <Form.Control value={author} onChange={e => setAuthor(e.target.value)} type="text" placeholder="Enter author" />
+                        <Form.Control 
+                            value={author} onChange={e => setAuthor(e.target.value)} type="text" placeholder="Enter author" />
                     </Form.Group>
 
                     <Form.Group className="mb-3">
@@ -45,7 +51,7 @@ const PostForm = ({ action, actionText, ...props }) => {
 
                     <Form.Group className="mb-3">
                         <Form.Label>Main content</Form.Label>
-                        <ReactQuill theme="snow" value={value} onChange={setValue} />
+                        <ReactQuill theme="snow" value={content} onChange={setContent} />
                     </Form.Group>
 
                     <Button onClick={handleSubmit} className="my-3">Add post</Button>
