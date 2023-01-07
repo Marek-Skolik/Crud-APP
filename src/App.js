@@ -8,6 +8,7 @@ import Header from './components/Views/Header/Header';
 import Footer from './components/Views/Footer/Footer';
 import { Container } from 'react-bootstrap';
 import { Routes, Route } from 'react-router-dom';
+import Categories from './components/Pages/Categories/Categories';
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/post/add" element={<AddPost />} />
           <Route path="post/edit/:id" element={<Edit />} />
           <Route path="/about" element={<About />} />
+          <Route path="/categories" element={<Categories />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

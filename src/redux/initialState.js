@@ -26,7 +26,15 @@ const initialState = {
             publishedDate: new Date('15.12.1999'),
             author: 'John Doe'
         }
-    ]
+    ],
+
+    categories : [
+
+        'Sport',
+        'News',
+        'Movies',
+
+      ]
 }
 
 export default initialState;

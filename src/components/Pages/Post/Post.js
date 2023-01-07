@@ -31,6 +31,7 @@ const Post = () => {
                             <Card.Title><h1>{postData.title}</h1></Card.Title>
                             <Card.Text className="my-0"><strong>Author: </strong>{postData.author}</Card.Text>
                             <Card.Text className="my-0"><strong>Published: </strong><DateToStr date={postData.publishedDate}/></Card.Text>
+                            <Card.Text className="my-0"><strong>Category:  </strong>{postData.category}</Card.Text>
                             <Card.Text><strong>Content: </strong><p dangerouslySetInnerHTML={{ __html: postData.content }} /></Card.Text>
                             <Card.Text>{postData.shortDescription}</Card.Text>
                         </Card.Body>
