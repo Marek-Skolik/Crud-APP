@@ -29,11 +29,9 @@ const initialState = {
     ],
 
     categories : [
-
-        'Sport',
-        'News',
-        'Movies',
-
+        'Sport', 
+        'News', 
+        'Movies'
       ]
 }
 
