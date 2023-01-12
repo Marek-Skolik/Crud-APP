@@ -6,6 +6,7 @@ const initialState = {
             shortDescription: 'Short description of the article...',
             content: 'Main content of the article',
             publishedDate: new Date('02-02-2022'),
+            category: 'Sport',
             author: 'John Doe'
         },
 
@@ -15,6 +16,7 @@ const initialState = {
             shortDescription: "Short description of the article...",
             content: 'Main content of the article',
             publishedDate: new Date('04.05.2004'),
+            category: 'News',
             author: 'John Doe'
         },
 
@@ -24,6 +26,7 @@ const initialState = {
             shortDescription: "Short description of the article...",
             content: 'Main content of the article',
             publishedDate: new Date('15.12.1999'),
+            category: 'Sport',
             author: 'John Doe'
         }
     ],
